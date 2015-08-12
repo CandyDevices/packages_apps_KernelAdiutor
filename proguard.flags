@@ -3,4 +3,5 @@
 -keep class com.bvalosek.**
 -keep class com.getbase.**
 -keep class android.**
+-dontwarn cyanogenmod.**
 -dontwarn com.squareup.okhttp.**

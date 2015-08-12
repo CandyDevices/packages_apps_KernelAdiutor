@@ -26,7 +26,7 @@ LOCAL_AAPT_FLAGS += --extra-packages io.karim.materialtabs
 
 LOCAL_ASSET_DIR := packages/apps/KernelAdiutor/app/src/main/assets
 
-LOCAL_STATIC_JAVA_LIBRARIES += libdashclock libsupportv4 libcardviewv7 librecyclerviewv7 libappcompatv7 libannotations libnineoldandroids libpicasso libmaterialtabs
+LOCAL_STATIC_JAVA_LIBRARIES += libdashclock libsupportv4 libcardviewv7 librecyclerviewv7 libappcompatv7 libannotations libnineoldandroids libpicasso libmaterialtabs libcmsdk
 
 include $(BUILD_PACKAGE)
 
@@ -40,6 +40,7 @@ LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := libdashclock:libs/dashclock-api-r2.0.jar
                                         libannotations:libs/android-support-annotations.jar \
                                         libnineoldandroids:libs/nineoldandroids-2.4.0.jar \
                                         libpicasso:libs/picasso-2.5.2.jar \
-                                        libmaterialtabs:libs/materialtabs-2.0.2.jar
+                                        libmaterialtabs:libs/materialtabs-2.0.2.jar \
+                                        libcmsdk:libs/org.cyanogenmod.platform.sdk.jar
 
 include $(BUILD_MULTI_PREBUILT)
