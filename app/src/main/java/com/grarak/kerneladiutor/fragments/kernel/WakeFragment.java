@@ -46,6 +46,7 @@ public class WakeFragment extends RecyclerViewFragment implements PopupCardView.
 
     private SeekBarCardView.DSeekBarCard mWakeTimeoutCard;
     private SwitchCardView.DSwitchCard mPowerKeySuspendCard;
+    private SwitchCardView.DSwitchCard mCameraGestureCard;
 
     @Override
     public void init(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class WakeFragment extends RecyclerViewFragment implements PopupCardView.
         if (Wake.hasGesture()) gestureInit();
         if (Wake.hasWakeTimeout()) wakeTimeoutInit();
         if (Wake.hasPowerKeySuspend()) powerKeySuspendInit();
+        if (Wake.hasCameraGesture()) cameraGestureInit();
     }
 
     private void dt2wInit() {
@@ -169,6 +171,16 @@ public class WakeFragment extends RecyclerViewFragment implements PopupCardView.
         addView(mPowerKeySuspendCard);
     }
 
+    private void cameraGestureInit() {
+        mCameraGestureCard = new SwitchCardView.DSwitchCard();
+        mCameraGestureCard.setTitle(getString(R.string.camera_gesture));
+        mCameraGestureCard.setDescription(getString(R.string.camera_gesture_summary));
+        mCameraGestureCard.setChecked(Wake.isCameraGestureActive());
+        mCameraGestureCard.setOnDSwitchCardListener(this);
+
+        addView(mCameraGestureCard);
+    }
+
     @Override
     public void onItemSelected(PopupCardView.DPopupCard dPopupCard, int position) {
         if (dPopupCard == mDt2wCard) Wake.setDt2w(position, getActivity());
@@ -194,6 +206,8 @@ public class WakeFragment extends RecyclerViewFragment implements PopupCardView.
             Wake.activateLenient(checked, getActivity());
         else if (dSwitchCard == mPowerKeySuspendCard)
             Wake.activatePowerKeySuspend(checked, getActivity());
+	else if (dSwitchCard == mCameraGestureCard)
+		Wake.activateCameraGesture(checked, getActivity());
         else {
             for (int i = 0; i < mGestureCards.length; i++)
                 if (dSwitchCard == mGestureCards[i]) {
