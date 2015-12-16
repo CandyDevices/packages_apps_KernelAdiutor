@@ -24,7 +24,7 @@ import android.content.Intent;
  */
 public class PluginManager {
 
-    private static int VERSION_CODE = BuildConfig.VERSION_CODE;
+    private static int VERSION_CODE = 119;
 
     /**
      * Publish a Tab {@link Tab}
@@ -33,7 +33,7 @@ public class PluginManager {
      */
     public static void publishTab(Tab tab) {
         Intent i = new Intent(com.kerneladiutor.library.action.Intent.RECEIVE_DATA);
-        i.putExtra(com.kerneladiutor.library.action.Intent.VERSION_CODE, BuildConfig.VERSION_CODE);
+        i.putExtra(com.kerneladiutor.library.action.Intent.VERSION_CODE, VERSION_CODE);
         i.putExtra(com.kerneladiutor.library.action.Intent.TAB, tab);
         tab.getContext().sendBroadcast(i);
     }
