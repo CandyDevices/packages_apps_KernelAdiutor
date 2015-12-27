@@ -508,72 +508,22 @@ public interface Constants {
                     NEGATIVE_TOGGLE, REGISTER_HOOK, MASTER_SEQUENCE, GLOVE_MODE}};
 
     // Wake
+    String WAKE = "/sys/android_touch";
 
     // DT2W
-    String LGE_TOUCH_DT2W = "/sys/devices/virtual/input/lge_touch/dt_wake_enabled";
-    String LGE_TOUCH_CORE_DT2W = "/sys/module/lge_touch_core/parameters/doubletap_to_wake";
-    String LGE_TOUCH_GESTURE = "/sys/devices/virtual/input/lge_touch/touch_gesture";
-    String DT2W = "/sys/android_touch/doubletap2wake";
-    String DT2W_2 = "/sys/android_touch2/doubletap2wake";
-    String TOUCH_PANEL_DT2W = "/proc/touchpanel/double_tap_enable";
-    String DT2W_WAKEUP_GESTURE = "/sys/devices/virtual/input/input1/wakeup_gesture";
-    String DT2W_ENABLE = "/sys/devices/platform/s3c2440-i2c.3/i2c-3/3-004a/dt2w_enable";
-    String DT2W_WAKE_GESTURE = "/sys/devices/platform/spi-tegra114.2/spi_master/spi2/spi2.0/input/input0/wake_gesture";
-    String DT2W_WAKE_GESTURE_2 = "/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0070/input/input0/wake_gesture";
-
-    String[] DT2W_ARRAY = {LGE_TOUCH_DT2W, LGE_TOUCH_CORE_DT2W, LGE_TOUCH_GESTURE, DT2W, DT2W_2,
-            TOUCH_PANEL_DT2W, DT2W_WAKEUP_GESTURE, DT2W_ENABLE, DT2W_WAKE_GESTURE, DT2W_WAKE_GESTURE_2};
-
-    // S2W
-    String S2W_ONLY = "/sys/android_touch/s2w_s2sonly";
-    String SW2 = "/sys/android_touch/sweep2wake";
-    String SW2_2 = "/sys/android_touch2/sweep2wake";
-
-    String[] S2W_ARRY = {S2W_ONLY, SW2, SW2_2};
-
-    // S2W Leniency
-    String LENIENT = "/sys/android_touch/sweep2wake_sensitive";
-
-    // T2W
-    String TSP_T2W = "/sys/devices/f9966000.i2c/i2c-1/1-004a/tsp";
-    String TOUCHWAKE_T2W = "/sys/class/misc/touchwake/enabled";
-
-    String[] T2W_ARRAY = {TSP_T2W, TOUCHWAKE_T2W};
-
-    // Wake Misc
-    String SCREEN_WAKE_OPTIONS = "/sys/devices/f9924000.i2c/i2c-2/2-0020/input/input2/screen_wake_options";
-
-    String[] WAKE_MISC_ARRAY = {SCREEN_WAKE_OPTIONS};
-
-    // Sleep Misc
-    String S2S = "/sys/android_touch/sweep2sleep";
-    String S2S_2 = "/sys/android_touch2/sweep2sleep";
-    String SCREEN_SLEEP_OPTIONS = "/sys/devices/f9924000.i2c/i2c-2/2-0020/input/input2/screen_sleep_options";
-
-    String[] SLEEP_MISC_ARRAY = {S2S, S2S_2, SCREEN_SLEEP_OPTIONS};
+    String DT2W = WAKE + "/doubletap2wake";
 
     // DT2S
-    String DT2S = "/sys/android_touch2/doubletap2sleep";
+    String DT2S = WAKE + "/doubletap2sleep";
 
-    String[] DT2S_ARRAY = {DT2S};
+    // S2W
+    String S2W = WAKE + "/sweep2wake";
 
-    // Gesture
-    String GESTURE_CRTL = "/sys/devices/virtual/touchscreen/touchscreen_dev/gesture_ctrl";
+    // S2S
+    String S2S = WAKE + "/sweep2sleep";
 
-    Integer[] GESTURE_HEX_VALUES = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512};
-    String[] GESTURE_STRING_VALUES = {"up", "down", "left", "right", "e", "o", "w", "c", "m", "double_click"};
-
-    String WAKE_TIMEOUT = "/sys/android_touch/wake_timeout";
-    String WAKE_TIMEOUT_2 = "/sys/android_touch2/wake_timeout";
-
-    String[] WAKE_TIMEOUT_ARRAY = {
-            WAKE_TIMEOUT, WAKE_TIMEOUT_2
-    };
-
-    String POWER_KEY_SUSPEND = "/sys/module/qpnp_power_on/parameters/pwrkey_suspend";
-
-    String[][] WAKE_ARRAY = {DT2W_ARRAY, S2W_ARRY, T2W_ARRAY, WAKE_MISC_ARRAY, SLEEP_MISC_ARRAY, WAKE_TIMEOUT_ARRAY,
-            {GESTURE_CRTL, POWER_KEY_SUSPEND, LENIENT}};
+    // S2W Leniency
+    String LENIENT = WAKE + "/sweep2wake_sensitive";
 
     // Sound
     String SOUND_CONTROL_ENABLE = "/sys/module/snd_soc_wcd9320/parameters/enable_fs";
