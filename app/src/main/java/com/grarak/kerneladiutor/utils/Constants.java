@@ -579,6 +579,9 @@ public interface Constants {
     // Camera Gesture
     String CAMERA_GESTURE = "/sys/android_touch/camera_gesture";
 
+    // Pocket mode for Gesture
+    String POCKET_MODE = "/sys/android_touch/pocket_mode";
+
     // Sound
     String SOUND_CONTROL_ENABLE = "/sys/module/snd_soc_wcd9320/parameters/enable_fs";
     String HIGHPERF_MODE_ENABLE = "/sys/devices/virtual/misc/soundcontrol/highperf_enabled";
