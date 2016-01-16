@@ -24,7 +24,7 @@ import android.content.Intent;
  */
 public class PluginManager {
 
-    private static int VERSION_CODE = 119;
+    private static int VERSION_CODE = 120;
 
     /**
      * Publish a Tab {@link Tab}
